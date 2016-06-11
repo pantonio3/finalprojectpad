@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finalproject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+      <title>Final Project</title>
+
+      <meta charset="utf-8">
+
+      <!-- Connect to Bootstrap CSS -->
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+
+      <!-- Connect to Font Awesome CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+      <!-- Connect to our own additional CSS -->
+      <link rel="stylesheet" href="assets/additional_styles.css">
+
+      <!-- Connect to jQuery (required before Bootstrap Javascript) -->
+      <script src="assets/jquery-2.2.2.min.js"></script>
+
+      <!-- Connect to Bootstrap Javascript -->
+      <script src="assets/bootstrap/js/bootstrap.js"></script>
+
+      <!-- These meta tags make Bootstrap responsive and more accessible -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Connect to Google Web Fonts -->
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,300italic,400italic,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/documents"><img width="25" height="25" src="images/logo2.gif"</a><a class="navbar-brand" href="/documents">Leonson Financial Services LLC</a>
+        </div><div class="">
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- /.navbar-collapse -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/documents">Documents</a></li>
+              <li><a href="/services">Services</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                        <% if current_user.present? %>
+              <li><a href="/users/edit"><%= current_user.first_name %></a></li>
+              <li>
+                <a href="/users/sign_out" data-method="delete" rel="nofollow">
+                  <i class="fa fa-fw fa-sign-out"></i>
+                  Sign Out
+                </a>
+              </li>
+              <% else %>
+              <li><a href="/users/sign_in">Sign In</a></li>
+              <li><a href="/users/sign_up">Sign Up</a></li>
+              <% end %>
+            </ul>
+          </div></div><!-- /.container-fluid -->
+    </nav>
+
+  <%= yield %>
+
+  </body>
+  </html>

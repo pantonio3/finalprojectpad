@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @service.errors.any? %>
+  <% @service.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Service #<%= @service.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_service/<%= @service.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @service.name %>">
+      </div>
+
+      <!-- Label and input for type -->
+      <!-- <div class="form-group">
+        <label for="type" class="control-label">
+          Type
+        </label>
+
+        <input type="text" id="type" name="type" placeholder="Type" class="form-control" value="<%= @service_type.name %>">
+      </div> -->
+
+      <!-- Label and input for cost -->
+      <div class="form-group">
+        <label for="cost" class="control-label">
+          Cost
+        </label>
+
+        <input type="text" id="cost" name="cost" placeholder="Cost" class="form-control" value="<%= @service.cost %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @service.user_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Service
+      </button>
+      or
+      <a href="/services/<%= @service.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

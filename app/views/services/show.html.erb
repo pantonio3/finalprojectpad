@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Service #<%= @service.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @service.name %></dd>
+
+      <dt>Type</dt>
+      <dd><%= @service.type %></dd>
+
+      <dt>Cost</dt>
+      <dd><%= @service.cost %></dd>
+
+      <dt>User</dt>
+      <dd><%= @service.user_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/services" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/services/<%= @service.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_service/<%= @service.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
