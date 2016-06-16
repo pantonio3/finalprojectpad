@@ -6,12 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-      <title>Final Project</title>
+      <title>Leonson Financial Services LLC</title>
 
       <meta charset="utf-8">
 
       <!-- Connect to Bootstrap CSS -->
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css">
 
       <!-- Connect to Font Awesome CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -45,7 +45,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/documents"><img width="25" height="25" src="images/logo2.gif"</a><a class="navbar-brand" href="/documents">Leonson Financial Services LLC</a>
+          <a class="navbar-brand" href="/documents">
+
+            <%= image_tag("logo2.gif", size: "25x25") %>
+
+            <a class="navbar-brand" href="/documents">Leonson Financial Services LLC</a>
         </div><div class="">
 
         </div>
