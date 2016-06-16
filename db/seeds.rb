@@ -18,4 +18,4 @@ csv.each do |row|
   puts "#{t.name}, #{t.cost} saved"
 end
 
-puts "There are now #{Servicetype.count} rows in the service types table"
+puts "There are now #{Servicetype.count} rows in the service types table_
