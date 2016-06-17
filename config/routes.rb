@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get "/delete_documenttype/:id", :controller => "documenttypes", :action => "destroy"
   #------------------------------
 
-
+  devise_for :users
     root 'documents#index'
 
   # Routes for the Service resource:
